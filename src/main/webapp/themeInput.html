@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ok">
+<head>
+<meta charset="EUC-KR">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap 101 Template</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+<form class="form-inline" role="form">
+<div class="container">
+	<h1>DoodleDoodle 테마 등록</h1>
+		<div class="form-group">
+			<label for="tag_value">태그</label> <INPUT TYPE=TEXT size=40
+				id="tag_value" NAME=tag_value value="" class="form-control"
+				placeholder="Enter Tag">
+		</div>
+		<table class="table">
+			<tbody>
+				<TR>
+					<TD WIDTH=120 ALIGN=LEFT>등록 위치</TD>
+					<TD><SELECT NAME="location_theme1" onchange=location_theme()>
+							<OPTION VALUE="0">서버</OPTION>
+							<OPTION VALUE="1">마켓</OPTION>
+					</SELECT></TD>
+				</TR>
+				<TR>
+					<TD WIDTH=120 ALIGN=LEFT>테마종류</TD>
+					<TD><select NAME="theme_category" onchange=change_category()>
+							<option value="kakaotalk">카카오톡</option>
+							<option value="kakaostory">카카오스토리</option>
+							<option value="mypeople">마이피플</option>
+							<option value="gosms">고SMS</option>
+							<option value="gocontact">고연락처</option>
+							<option value="launcherplanet">런처플래닛</option>
+							<option value="golauncher">고런처</option>
+							<option value="dodollauncher">도돌런처</option>
+							<option value="dodollocker">도돌락커</option>
+							<option value="golocker">고락커</option>
+							<option value="everylocker">모두의락커</option>
+							<option value="supernote">슈퍼노트</option>
+							<option value="battery">배터리</option>
+							<option value="dayweekbar">데이윅바</option>
+							<option value="powersave">파워세이브</option>
+							<option value="speedkiller">스피드킬러</option>
+							<option value="stylewidget">스타일위젯</option>
+							<option value="flashman">플래시맨</option>
+							<option value="manercontroll">매너컨트롤러</option>
+							<option value="keyboard">도돌키보드</option>
+							<option value="font">폰트</option>
+							<option value="alsong">알송</option>
+							<option value="dodolcalendar">도돌캘린더</option>
+							<option value="taskkiller">태스크킬러</option>
+							<option value="todo">오늘할일</option>
+							<option value="telegram">텔레그램</option>
+					</select></TD>
+				<TR>
+					<TD WIDTH=120 ALIGN=LEFT>카테고리</TD>
+					<TD id="style_category"><select NAME="category">
+							<option value="캐릭터" selected='selected'>캐릭터</option>
+							<option value="일러스트">일러스트</option>
+							<option value="사진">사진</option>
+					</select></TD>
+				</TR>
+				<TR>
+					<TD WIDTH=120 ALIGN=LEFT>태그</TD>
+					<TD WIDTH=350 ALIGN=LEFT><INPUT TYPE=TEXT size=40
+						NAME=tag_value value=""></TD>
+				</TR>
+				<TR>
+					<TD WIDTH=320 ALIGN=LEFT>한정 테마</TD>
+					<TD WIDTH=450 ALIGN=LEFT><select NAME="limit_yn">
+							<option value="N" selected='selected'>N</option>
+							<option value="Y">Y</option>
+					</select></TD>
+				</TR>
+				<TR>
+					<TD WIDTH=120 ALIGN=LEFT>한정 다운로드 수</TD>
+					<TD WIDTH=350 ALIGN=LEFT><INPUT TYPE=TEXT size=40
+						NAME=limit_count value=0></TD>
+				</TR>
+				<TR>
+					<TD WIDTH=120 ALIGN=LEFT>제목</TD>
+					<TD WIDTH=350 ALIGN=LEFT><INPUT TYPE=TEXT size=40 NAME=title></TD>
+				</TR>
+				<TR>
+					<TD WIDTH=120 ALIGN=LEFT>제목(EN)</TD>
+					<TD WIDTH=350 ALIGN=LEFT><INPUT TYPE=TEXT size=40
+						NAME=title_en class="form-control"></TD>
+				</TR>
+				<TR>
+					<TD WIDTH=120 ALIGN=LEFT>내용</TD>
+					<TD WIDTH=350 ALIGN=LEFT><INPUT TYPE=TEXT size=40 NAME=comment
+						class="form-control"></TD>
+				</TR>
+				<TR>
+					<TD WIDTH=120 ALIGN=LEFT>내용(EN)</TD>
+					<TD WIDTH=350 ALIGN=LEFT><INPUT TYPE=TEXT size=40
+						NAME=comment_en></TD>
+				</TR>
+				<TR>
+					<TD WIDTH=120 ALIGN=LEFT>버전</TD>
+					<TD WIDTH=350 ALIGN=LEFT><INPUT TYPE=TEXT size=40 NAME=version></TD>
+				</TR>
+				<TR>
+					<TD WIDTH=320 ALIGN=LEFT>APK/ZIP 파일</TD>
+					<TD WIDTH=450 ALIGN=LEFT id="apk_file"><INPUT
+						style='font-size: 8pt; border: 1px solid' TYPE=FILE size=100
+						NAME=file_apk></TD>
+				</TR>
+				<TR>
+					<TD WIDTH=320 ALIGN=LEFT>썸네일 파일</TD>
+					<TD WIDTH=450 ALIGN=LEFT id="thumbnail_file"><INPUT
+						style='font-size: 8pt; border: 1px solid' TYPE=FILE size=100
+						NAME=file_list_image></TD>
+				</TR>
+				<TR>
+					<TD WIDTH=320 ALIGN=LEFT>리뷰 압축파일</TD>
+					<TD WIDTH=450 ALIGN=LEFT id="review_file"><INPUT
+						style='font-size: 8pt; border: 1px solid' TYPE=FILE size=100
+						NAME=review_zip></TD>
+				</TR>
+				<TR>
+					<TD WIDTH=120 ALIGN=LEFT>작가이름</TD>
+					<TD WIDTH=350 ALIGN=LEFT><INPUT TYPE=TEXT size=40
+						NAME=creator_name class="form-control"></TD>
+				</TR>
+
+				<TR>
+					<TD WIDTH=120 ALIGN=LEFT>무료(0) / 유료(1) / 인앱(2)</TD>
+					<TD WIDTH=350 ALIGN=LEFT><INPUT TYPE=TEXT size=40
+						NAME=price_state value=0></TD>
+				</TR>
+				<TR>
+					<TD WIDTH=120 ALIGN=LEFT>코인</TD>
+					<TD WIDTH=350 ALIGN=LEFT><INPUT TYPE=TEXT size=40 NAME=price
+						value=0></TD>
+				</TR>
+				<TR>
+					<TD WIDTH=320 ALIGN=LEFT>유료 아이콘</TD>
+					<TD WIDTH=450 ALIGN=LEFT><INPUT
+						style='font-size: 8pt; border: 1px solid' TYPE=FILE size=100
+						NAME=price_icon></TD>
+				</TR>
+				<TR>
+					<TD COLSPAN=2 ALIGN=CENTER></TD>
+				</TR>
+			</tbody>
+		</table>
+		</div>
+	<h1>DoodleDoodle 테마 등록</h1>
+</div>
+</form>
+</body>
+</html>
